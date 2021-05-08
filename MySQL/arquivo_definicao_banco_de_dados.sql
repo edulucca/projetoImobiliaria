@@ -35,7 +35,7 @@ references tb_imobiliaria (cd_imobiliaria);
 -- DML
 -- Inserção de teste
 insert into tb_imobiliaria(cd_imobiliaria, nome, endereco)
-values (123, "Imobiliaria São Jorge", "Rua Cônego Walmor Castro, Ponta das Canas, Florianópolis-SC");
+values (45, "Imobiliaria São Pedro", "Rua Cônego Walmor Castro, Ponta das Canas, Florianópolis-SC");
 
 insert into tb_imovel(nome, endereco, descricao, status_ , tipo, finalidade,
 nr_quarto, nr_sala, nr_banheiro, nr_vaga, cd_imobiliaria)
@@ -50,27 +50,14 @@ select * from tb_imovel;
 
 select * from tb_imobiliaria; 
 
--- delete from tb_imovel where ;
 delete from tb_imobiliaria where cd_imobiliaria = 1;
 
 update tb_imobiliaria set nome = "Imobiliaria São Pedro", endereco = "Ceilandia, Ponta das Canas, Florianópolis-SC" where cd_imobiliaria = 123;
+
 select * from tb_imovel where cd_imobiliaria = 1;
 
-select * from tb_imobiliaria where nome like '%bili%';
+select * from tb_imobiliaria;
 
-drop table tb_imobiliaria;
+delete from tb_imobiliaria where cd_imobiliaria = 24;
 
-delete from tb_imovel where cd_imobiliaria = 345;
-
--- Criação de Stored Procedure
--- Para cadastrar o usuário
-DELIMITER $$
-
-CREATE PROCEDURE FiltroImobi(in var_nome varchar(100))
-BEGIN
-    select * from tb_imobiliaria where nome like concat('%', var_nome, '%');
-END$$
-
-DELIMITER ;
-
-call FiltroImobi("bili");
+select * from tb_imobiliaria where nome like '%Mar%';

@@ -36,15 +36,26 @@ class Imobiliaria:
     #Cadastrar Imobiliaria
     def cadastrar(self):
         try:
+            #Garante que um ID igual a outro seja gravado
+            validar = ImobiliariaDAO().selectAll()
+            for i in validar:
+                if i[0] == self.__id:
+                    return "ID de Imobiliaria já cadastrado! Tente outro, por favor."
+
+            #Valida o campo Nome*
+            if self.__nome == "":
+                return "Nome não foi inserido! Tente novamente!"
+
             ImobiliariaDAO().insert(self)
             return "Imobiliaria cadastrada com sucesso!"
+
         except:
             return "Erro ao cadastrar Imobiliaria!"
 
     #Excluir Imobiliaria
-    def excluir(self, id: int):
+    def excluir(self, cd):
         try:
-            ImobiliariaDAO().delete(id)
+            ImobiliariaDAO().delete(cd)
             return "Imobiliaria excluida com sucesso!"
         except:
             return "Erro ao excluir Imobiliaria!"
@@ -60,18 +71,67 @@ class Imobiliaria:
     #Consulta todos os dados de Imobiliaria e salva em uma lista
     def recuperarTodos(self):
         try:
+            #Recuperar os dados do Banco de Dados
             dados = ImobiliariaDAO().selectAll()
 
-            return dados
+            #Algoritimo para add os dados recperados em um dicionario com indexação
+            jsonRetorno = dict()
+            contador = 1
+            for i in dados:
+                jsonRetorno.setdefault((contador), []).append({
+                    'Código da Imobiliaria': i[0],
+                    'Nome da Imobiliaria': i[1],
+                    'Endereço da Imobiliaria': i[2]
+                })
+                contador = contador + 1
+            return jsonRetorno
+        except:
+            return "Erro ao recuperar dados!"
+
+    def recuperarTodosPage(self, inicio: int, final: int):
+        try:
+            # Declaração de Variaveis
+            dados = []
+            cursor = inicio - 1
+            jsonRetorno = dict()
+            #Recuperar os dados do Banco de Dados
+            consulta = ImobiliariaDAO().selectAll()
+
+            #Seleciona os dados pedidos e adiciona em nova lista
+            for i in range(inicio, final + 1):
+                dados.append(consulta[cursor])
+                cursor = cursor + 1
+
+            #Algoritimo para add os dados recperados em um dicionario com indexação
+            for i in dados:
+                jsonRetorno.setdefault((inicio), []).append({
+                    'Código da Imobiliaria': i[0],
+                    'Nome da Imobiliaria': i[1],
+                    'Endereço da Imobiliaria': i[2]
+                })
+                inicio = inicio + 1
+
+            return jsonRetorno
         except:
             return "Erro ao recuperar dados!"
 
     #Consulta de acordo com o Nome(Não há necessidade que o nome esteja completo)
-    def recuperarNomeFiltro(self):
+    def recuperarNomeFiltro(self, nome: str):
         try:
-            dados = ImobiliariaDAO().selectNome(self)
+            # Recuperar os dados do Banco de Dados
+            dados = ImobiliariaDAO().selectNome(nome)
 
-            return dados
+            # Algoritimo para add os dados recperados em um dicionario com indexação
+            jsonRetorno = dict()
+            contador = 1
+            for i in dados:
+                jsonRetorno.setdefault((contador), []).append({
+                    'Código da Imobiliaria': i[0],
+                    'Nome da Imobiliaria': i[1],
+                    'Endereço da Imobiliaria': i[2]
+                })
+                contador = contador + 1
+            return jsonRetorno
         except:
             return "Erro ao recuperar dados!"
 

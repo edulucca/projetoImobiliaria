@@ -4,8 +4,8 @@ from mypython.persistencia.ImovelDAO import ImovelDAO
 
 class Imovel(Imobiliaria):
     # Construtor Cheio
-    def __init__(self, imobiliaria: Imobiliaria, id, nome, endereco, descricao, status, tipo, finalidade,
-                 numQuartos, numSalas, numBanheiros, numVagas):
+    def __init__(self, imobiliaria: Imobiliaria = "", id=0, nome="", endereco="", descricao="", status="", tipo="", finalidade="",
+                 numQuartos=0, numSalas=0, numBanheiros=0, numVagas=0):
         self.__imobiliaria = imobiliaria
         self.__id = id
         self.__nome = nome
@@ -115,9 +115,21 @@ class Imovel(Imobiliaria):
     # Cadastrar Imovel
     def cadastrar(self):
         try:
+            # Garante que um ID igual a outro, não seja gravado
+            validar = ImovelDAO().selectAll()
+
+            for i in validar:
+                if i[0] == self.__id:
+                    return "ID do Imovel já foi cadastrado! Tente outro, por favor."
+
+            # Valida o campo Nome*
+            if self.__nome == "":
+                return "Nome não foi inserido! Tente novamente!"
+
             ImovelDAO().insert(self)
-            return "Imovel cadastrada com sucesso!"
-        except:
+            return "Imovel cadastrado com sucesso!"
+
+        except Exception as err:
             return "Erro ao cadastrar Imovel!"
 
     # Excluir Imovel
@@ -139,18 +151,156 @@ class Imovel(Imobiliaria):
     # Consulta todos os dados de imoveis e salva em uma lista
     def recuperarTodos(self):
         try:
+            # Recuperar os dados do Banco de Dados
             dados = ImovelDAO().selectAll()
 
-            return dados
+            # Algoritimo para add os dados recperados em um dicionario com indexação
+            jsonRetorno = dict()
+            contador = 1
+            for i in dados:
+
+                if i[4] == 'A':
+                    status = "ATIVO"
+                else:
+                    status = "INATIVO"
+
+                if i[5] == 'C':
+                    tipo = "CASA"
+                elif i[5] == 'A':
+                    tipo = "APARTAMENTO"
+                else:
+                    tipo = "INDEFINIDO"
+
+                if i[6] == 'R':
+                    fim = "RESIDENCIAL"
+                elif i[6] == 'E':
+                    fim = "ESCRITORIO"
+                else:
+                    fim = "INDEFINIDO"
+
+                jsonRetorno.setdefault((contador), []).append({
+                    'Código da Imobiliaria': i[11],
+                    'Codigo do Imovel': i[0],
+                    'Nome do Imovel': i[1],
+                    'Endereço': i[2],
+                    'Descrição': i[3],
+                    'Status': status,
+                    'Tipo': tipo,
+                    'Finalidade': fim,
+                    'Número de Quartos': i[7],
+                    'Número de Salas': i[8],
+                    'Número de Banheiros': i[9],
+                    'Número de Vagas': i[10]
+                })
+                contador = contador + 1
+            return jsonRetorno
         except:
             return "Erro ao recuperar dados!"
 
     # Consulta Inteligente de acordo com o Nome
     def recuperarNomeFiltro(self, nome: str):
         try:
+            # Recuperar os dados do Banco de Dados
             dados = ImovelDAO().selectNome(nome)
+            # Algoritimo para add os dados recperados em um dicionario com indexação
+            jsonRetorno = dict()
+            contador = 1
+            for i in dados:
+                if i[4] == 'A':
+                    status = "ATIVO"
+                else:
+                    status = "INATIVO"
 
-            return dados
+                if i[5] == 'C':
+                    tipo = "CASA"
+                elif i[5] == 'A':
+                    tipo = "APARTAMENTO"
+                else:
+                    tipo = "INDEFINIDO"
+
+                if i[6] == 'R':
+                    fim = "RESIDENCIAL"
+                elif i[6] == 'E':
+                    fim = "ESCRITORIO"
+                else:
+                    fim = "INDEFINIDO"
+
+                jsonRetorno.setdefault((contador), []).append({
+                    'Código da Imobiliaria': i[11],
+                    'Codigo do Imovel': i[0],
+                    'Nome do Imovel': i[1],
+                    'Endereço': i[2],
+                    'Descrição': i[3],
+                    'Status': status,
+                    'Tipo': tipo,
+                    'Finalidade': fim,
+                    'Número de Quartos': i[7],
+                    'Número de Salas': i[8],
+                    'Número de Banheiros': i[9],
+                    'Número de Vagas': i[10]
+                })
+                contador = contador + 1
+            return jsonRetorno
         except:
             return "Erro ao recuperar dados!"
+
+
+    def recuperarTodosPage(self, inicio: int, final: int):
+        try:
+            # Declaração de Variaveis
+            dados = []
+            cursor = inicio - 1
+            jsonRetorno = dict()
+            #Recuperar os dados do Banco de Dados
+            consulta = ImovelDAO().selectAll()
+
+            #Seleciona os dados pedidos e adiciona em nova lista
+            for i in range(inicio, final + 1):
+                dados.append(consulta[cursor])
+                cursor = cursor + 1
+
+            #Algoritimo para add os dados recperados em um dicionario com indexação
+            for i in dados:
+
+                if i[4] == 'A':
+                    status = "ATIVO"
+                else:
+                    status = "INATIVO"
+
+                if i[5] == 'C':
+                    tipo = "CASA"
+                elif i[5] == 'A':
+                    tipo = "APARTAMENTO"
+                else:
+                    tipo = "INDEFINIDO"
+
+                if i[6] == 'R':
+                    fim = "RESIDENCIAL"
+                elif i[6] == 'E':
+                    fim = "ESCRITORIO"
+                else:
+                    fim = "INDEFINIDO"
+
+                jsonRetorno.setdefault((inicio), []).append({
+                    'Código da Imobiliaria': i[11],
+                    'Codigo do Imovel': i[0],
+                    'Nome do Imovel': i[1],
+                    'Endereço': i[2],
+                    'Descrição': i[3],
+                    'Status': status,
+                    'Tipo': tipo,
+                    'Finalidade': fim,
+                    'Número de Quartos': i[7],
+                    'Número de Salas': i[8],
+                    'Número de Banheiros': i[9],
+                    'Número de Vagas': i[10]
+                })
+                inicio = inicio + 1
+
+            return jsonRetorno
+        except Exception as err:
+            print(err)
+            return "Erro ao recuperar dados!"
+
+
 

@@ -135,7 +135,7 @@ class ImobiliariaDAO():
 
     #SELECT
     #Seleciona os dados de acordo com o informado e retorna os valores mais proximos do nome
-    def selectNome(self, objImobi: object):
+    def selectNome(self, nome: str):
         try:
             #O Banco é Conectado
             bd = self.bd.conectar()
@@ -148,7 +148,7 @@ class ImobiliariaDAO():
             add_imobi = "select * from tb_imobiliaria where nome like concat('%', %s, '%')"
 
             #Parametro para a Stored Procedure
-            data_imobi = (objImobi.getNome,)
+            data_imobi = (nome,)
 
             #Ordem para Execução do comando SQL, passado o camando SQL e os parametros
             cursor.execute(add_imobi, data_imobi)
@@ -159,7 +159,7 @@ class ImobiliariaDAO():
             return result
         #Captura a exceção
         except mysql.connector.Error as err:
-            print("Erro ao realizar a consulta de imobiliaria. Erro {}:".format(err))
+            print("Erro ao realizar a consulta de imobiliaria!")
 
         #Termina a execução do método
         finally:

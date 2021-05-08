@@ -20,13 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebbd3ac0-21dd-40fa-8fbd-c0dea86facf6" name="Default Changelist" comment="Inicio do projeto">
-      <change afterPath="$PROJECT_DIR$/mypython/persistencia/BancoDeDados.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mypython/persistencia/ImobiliariaDAO.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mypython/persistencia/ImovelDAO.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mypython/apresentacao/controller/ImobiliariaController.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mypython/apresentacao/controller/ImovelController.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mypython/apresentacao/controller/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mypython/apresentacao/endpoints/ImobiliariaController.py" beforeDir="false" afterPath="$PROJECT_DIR$/mypython/apresentacao/endpoints/ImobiliariaController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySQL/arquivo_definicao_banco_de_dados.sql" beforeDir="false" afterPath="$PROJECT_DIR$/MySQL/arquivo_definicao_banco_de_dados.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mypython/Lib/site-packages/flask/blueprints.py" beforeDir="false" afterPath="$PROJECT_DIR$/mypython/Lib/site-packages/flask/blueprints.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mypython/Lib/site-packages/flask/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/mypython/Lib/site-packages/flask/cli.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mypython/Lib/site-packages/jinja2/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/mypython/Lib/site-packages/jinja2/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mypython/Lib/site-packages/pip/_internal/models/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/mypython/Lib/site-packages/pip/_internal/models/index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mypython/Lib/site-packages/werkzeug/routing.py" beforeDir="false" afterPath="$PROJECT_DIR$/mypython/Lib/site-packages/werkzeug/routing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mypython/Lib/site-packages/werkzeug/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/mypython/Lib/site-packages/werkzeug/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mypython/apresentacao/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/mypython/apresentacao/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mypython/apresentacao/endpoints/ImobiliariaController.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mypython/apresentacao/endpoints/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mypython/negocio/Imobiliaria.py" beforeDir="false" afterPath="$PROJECT_DIR$/mypython/negocio/Imobiliaria.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mypython/negocio/Imovel.py" beforeDir="false" afterPath="$PROJECT_DIR$/mypython/negocio/Imovel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mypython/persistencia/ImobiliariaDAO.py" beforeDir="false" afterPath="$PROJECT_DIR$/mypython/persistencia/ImobiliariaDAO.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +62,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -59,49 +70,7 @@
       <recent name="C:\Users\eduar\OneDrive\Documentos\projetoImobiliaria\mypython" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Imovel">
-    <configuration name="BancoDeDados" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="projetoImobiliaria" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mypython/persistencia" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mypython/persistencia/BancoDeDados.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Caracteristica" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="projetoImobiliaria" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mypython/negocio" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mypython/negocio/Caracteristica.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.app">
     <configuration name="Imobiliaria" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="projetoImobiliaria" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -115,6 +84,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mypython/negocio/Imobiliaria.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ImobiliariaController" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="projetoImobiliaria" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mypython/apresentacao/endpoints" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\eduar\OneDrive\Documentos\projetoImobiliaria\mypython\apresentacao\endpoints\ImobiliariaController.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -165,6 +155,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="projetoImobiliaria" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mypython/apresentacao" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mypython/apresentacao/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="projetoImobiliaria" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -189,10 +200,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Imovel" />
+        <item itemvalue="Python.app (1)" />
         <item itemvalue="Python.Imobiliaria" />
+        <item itemvalue="Python.ImobiliariaController" />
         <item itemvalue="Python.ImobiliariaDAO" />
-        <item itemvalue="Python.BancoDeDados" />
-        <item itemvalue="Python.Caracteristica" />
       </list>
     </recent_temporary>
   </component>
@@ -232,57 +243,57 @@
     <option name="LAST_COMMIT_MESSAGE" value="Inicio do projeto" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="309" y="42" key="#Inspections" timestamp="1620291619268">
+    <state x="309" y="42" key="#Inspections" timestamp="1620405642940">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="309" y="42" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1620291619268" />
+    <state x="309" y="42" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1620405642940" />
     <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1620280896853">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1620280896853" />
-    <state x="5" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1620370198826">
+    <state x="5" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1620452647540">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="5" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1620370198826" />
-    <state width="1345" height="154" key="GridCell.Tab.0.bottom" timestamp="1620378199890">
+    <state x="5" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1620452647540" />
+    <state width="1345" height="187" key="GridCell.Tab.0.bottom" timestamp="1620486764995">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="154" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620378199890" />
-    <state width="1345" height="154" key="GridCell.Tab.0.center" timestamp="1620378199890">
+    <state width="1345" height="187" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620486764995" />
+    <state width="1345" height="187" key="GridCell.Tab.0.center" timestamp="1620486764995">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="154" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1620378199890" />
-    <state width="1345" height="154" key="GridCell.Tab.0.left" timestamp="1620378199890">
+    <state width="1345" height="187" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1620486764995" />
+    <state width="1345" height="187" key="GridCell.Tab.0.left" timestamp="1620486764870">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="154" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1620378199890" />
-    <state width="1345" height="154" key="GridCell.Tab.0.right" timestamp="1620378199890">
+    <state width="1345" height="187" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1620486764870" />
+    <state width="1345" height="187" key="GridCell.Tab.0.right" timestamp="1620486764995">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="154" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1620378199890" />
-    <state width="1345" height="223" key="GridCell.Tab.1.bottom" timestamp="1620331151797">
+    <state width="1345" height="187" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1620486764995" />
+    <state width="1345" height="223" key="GridCell.Tab.1.bottom" timestamp="1620470838162">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620331151797" />
-    <state width="1345" height="223" key="GridCell.Tab.1.center" timestamp="1620331151797">
+    <state width="1345" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620470838162" />
+    <state width="1345" height="223" key="GridCell.Tab.1.center" timestamp="1620470838162">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1620331151797" />
-    <state width="1345" height="223" key="GridCell.Tab.1.left" timestamp="1620331151797">
+    <state width="1345" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1620470838162" />
+    <state width="1345" height="223" key="GridCell.Tab.1.left" timestamp="1620470838162">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1620331151797" />
-    <state width="1345" height="223" key="GridCell.Tab.1.right" timestamp="1620331151797">
+    <state width="1345" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1620470838162" />
+    <state width="1345" height="223" key="GridCell.Tab.1.right" timestamp="1620470838162">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1620331151797" />
+    <state width="1345" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1620470838162" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1620247454280">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1620247454280" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1620330459209">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1620444697921">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1620330459209" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1620444697921" />
   </component>
 </project>
